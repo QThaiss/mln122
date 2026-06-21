@@ -30,9 +30,11 @@ test('Vercel chat endpoint returns the Gemini reply for a valid request', async 
   const { default: handler } = await import(`${handlerPath.href}?test=${Date.now()}`)
   const previousFetch = globalThis.fetch
   const previousApiKey = process.env.GEMINI_API_KEY
+  const previousModel = process.env.GEMINI_MODEL
   let outboundRequest
 
   process.env.GEMINI_API_KEY = 'test-key'
+  delete process.env.GEMINI_MODEL
   globalThis.fetch = async (url, options) => {
     outboundRequest = { url, options }
     return {
@@ -59,12 +61,14 @@ test('Vercel chat endpoint returns the Gemini reply for a valid request', async 
     globalThis.fetch = previousFetch
     if (previousApiKey === undefined) delete process.env.GEMINI_API_KEY
     else process.env.GEMINI_API_KEY = previousApiKey
+    if (previousModel === undefined) delete process.env.GEMINI_MODEL
+    else process.env.GEMINI_MODEL = previousModel
   }
 
   assert.equal(response.statusCode, 200)
   assert.deepEqual(response.body, { reply: 'Gemini reply' })
   assert.equal(
     outboundRequest.url,
-    'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=test-key'
+    'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=test-key'
   )
 })
