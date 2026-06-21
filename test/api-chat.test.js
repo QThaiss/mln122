@@ -20,7 +20,7 @@ function createResponse() {
   }
 }
 
-test('Vercel chat endpoint returns the OpenAI reply for a valid request', async () => {
+test('Vercel chat endpoint returns the Gemini reply for a valid request', async () => {
   assert.equal(
     existsSync(handlerPath),
     true,
@@ -29,15 +29,15 @@ test('Vercel chat endpoint returns the OpenAI reply for a valid request', async 
 
   const { default: handler } = await import(`${handlerPath.href}?test=${Date.now()}`)
   const previousFetch = globalThis.fetch
-  const previousApiKey = process.env.OPENAI_API_KEY
+  const previousApiKey = process.env.GEMINI_API_KEY
   let outboundRequest
 
-  process.env.OPENAI_API_KEY = 'test-key'
+  process.env.GEMINI_API_KEY = 'test-key'
   globalThis.fetch = async (url, options) => {
     outboundRequest = { url, options }
     return {
       ok: true,
-      json: async () => ({ choices: [{ message: { content: 'AI reply' } }] }),
+      json: async () => ({ candidates: [{ content: { parts: [{ text: 'Gemini reply' }] } }] }),
     }
   }
 
@@ -57,11 +57,14 @@ test('Vercel chat endpoint returns the OpenAI reply for a valid request', async 
     )
   } finally {
     globalThis.fetch = previousFetch
-    if (previousApiKey === undefined) delete process.env.OPENAI_API_KEY
-    else process.env.OPENAI_API_KEY = previousApiKey
+    if (previousApiKey === undefined) delete process.env.GEMINI_API_KEY
+    else process.env.GEMINI_API_KEY = previousApiKey
   }
 
   assert.equal(response.statusCode, 200)
-  assert.deepEqual(response.body, { reply: 'AI reply' })
-  assert.equal(outboundRequest.url, 'https://api.openai.com/v1/chat/completions')
+  assert.deepEqual(response.body, { reply: 'Gemini reply' })
+  assert.equal(
+    outboundRequest.url,
+    'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=test-key'
+  )
 })

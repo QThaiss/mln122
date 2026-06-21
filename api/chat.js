@@ -1,11 +1,11 @@
-const OPENAI_URL = 'https://api.openai.com/v1/chat/completions'
+const GEMINI_API_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models'
 
-function buildUserMessage(message, context, systemPrompt) {
+function buildUserMessage(message, context) {
   if (context) {
-    return `${systemPrompt}\n\nNGỮ CẢNH BÀI HỌC:\n${context}\n\nCÂU HỎI CỦA SINH VIÊN:\n${message}`
+    return `NGỮ CẢNH BÀI HỌC:\n${context}\n\nCÂU HỎI CỦA SINH VIÊN:\n${message}`
   }
 
-  return `${systemPrompt}\n\nCÂU HỎI:\n${message}`
+  return `CÂU HỎI:\n${message}`
 }
 
 export default async function handler(req, res) {
@@ -20,46 +20,43 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'message is required' })
   }
 
-  const apiKey = process.env.OPENAI_API_KEY
+  const apiKey = process.env.GEMINI_API_KEY
   if (!apiKey) {
-    console.error('OPENAI_API_KEY is not configured.')
+    console.error('GEMINI_API_KEY is not configured.')
     return res.status(503).json({ error: 'AI service is not configured.' })
   }
 
   try {
-    const openAIResponse = await fetch(OPENAI_URL, {
+    const model = process.env.GEMINI_MODEL || 'gemini-2.0-flash'
+    const geminiUrl = `${GEMINI_API_BASE_URL}/${model}:generateContent?key=${encodeURIComponent(apiKey)}`
+    const geminiResponse = await fetch(geminiUrl, {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: buildUserMessage(message, context, systemPrompt) },
-        ],
-        temperature: 0.7,
-        max_tokens: 800,
+        systemInstruction: { parts: [{ text: systemPrompt }] },
+        contents: [{ parts: [{ text: buildUserMessage(message, context) }] }],
+        generationConfig: { temperature: 0.7, maxOutputTokens: 800 },
       }),
     })
 
-    if (!openAIResponse.ok) {
-      console.error(`OpenAI request failed with status ${openAIResponse.status}.`)
+    if (!geminiResponse.ok) {
+      console.error(`Gemini request failed with status ${geminiResponse.status}.`)
       return res.status(502).json({ error: 'AI service is unavailable.' })
     }
 
-    const data = await openAIResponse.json()
-    const reply = data.choices?.[0]?.message?.content
+    const data = await geminiResponse.json()
+    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text
 
     if (!reply) {
-      console.error('OpenAI response did not include a reply.')
+      console.error('Gemini response did not include a reply.')
       return res.status(502).json({ error: 'AI service returned an invalid response.' })
     }
 
     return res.status(200).json({ reply })
   } catch (error) {
-    console.error('OpenAI request failed:', error)
+    console.error('Gemini request failed:', error)
     return res.status(502).json({ error: 'AI service is unavailable.' })
   }
 }
