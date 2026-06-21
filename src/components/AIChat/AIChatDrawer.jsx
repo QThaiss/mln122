@@ -34,7 +34,7 @@ const DOT_ANIM = {
 }
 
 export default function AIChatDrawer({
-  isOpen, onClose, messages, onSend, isLoading, onNewChat,
+  isOpen, onClose, messages, onSend, isLoading, onNewChat, proxyError,
 }) {
   const [input, setInput] = useState('')
   const [showSuggestions, setShowSuggestions] = useState(true)
@@ -150,6 +150,25 @@ export default function AIChatDrawer({
                 </button>
               </div>
             </div>
+
+            {/* Offline warning banner */}
+            {proxyError && (
+              <div className="ai-chat-offline-banner">
+                <span>
+                  Backend không khả dụng — đang hiển thị nội dung từ bài học.
+                  <br />
+                  <a
+                    href="http://localhost:3001"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ai-chat-offline-link"
+                  >
+                    Khởi động backend
+                  </a>
+                  {' '}(npm run dev trong thư mục backend) để có câu trả lời đầy đủ từ AI.
+                </span>
+              </div>
+            )}
 
             {/* Messages area */}
             <div className="ai-chat-messages" ref={bottomRef}>

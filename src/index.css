@@ -1505,6 +1505,25 @@ body {
   align-items: flex-end;
 }
 
+.ai-chat-offline-banner {
+  background: #fef3c7;
+  border-bottom: 1px solid #f59e0b;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  color: #92400e;
+  line-height: 1.5;
+}
+
+.ai-chat-offline-link {
+  color: #d97706;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.ai-chat-offline-link:hover {
+  color: #b45309;
+}
+
 .ai-chat-disclaimer {
   font-size: 0.7rem;
   color: var(--color-text-muted);
