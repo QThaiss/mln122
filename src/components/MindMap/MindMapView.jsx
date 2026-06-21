@@ -18,7 +18,7 @@ import { chapterData } from '../../services/ragService'
 function ChapterNode({ data }) {
   return (
     <motion.div
-      className="mind-map-node"
+      className="mind-map-node mind-map-node-root"
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.4 }}
@@ -38,7 +38,7 @@ function ChapterNode({ data }) {
 function SectionNode({ data }) {
   return (
     <motion.div
-      className="mind-map-section-node"
+      className={`mind-map-section-node mind-map-section-node-${data.color}`}
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.4 }}
@@ -168,6 +168,7 @@ export default function MindMap() {
   return (
     <div className="mind-map-container">
       <ReactFlow
+        className="mind-map-flow"
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}

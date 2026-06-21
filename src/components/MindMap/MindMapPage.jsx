@@ -1,40 +1,49 @@
+import { Link } from 'react-router-dom'
+import { ArrowLeft, Map, Move, ZoomIn } from 'lucide-react'
 import MindMapView from './MindMapView'
 import { chapterData } from '../../services/ragService'
 
 export default function MindMapPage() {
   return (
-    <div className="page-wrapper">
-      <aside className="sidebar-nav" role="navigation" aria-label="Điều hướng bài học">
-        <nav>
-          <div className="nav-cluster">
-            <div className="nav-cluster-label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-              </svg>
-              Mind Map
-            </div>
-          </div>
-          <div className="p-4">
-            <p className="text-sm" style={{ color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-              Bản đồ tư duy tự động tạo từ nội dung bài học Chương {chapterData.chapterNumber}.
-              Di chuyển và phóng to/thu nhỏ để xem chi tiết.
-            </p>
-          </div>
-        </nav>
-      </aside>
+    <div className="mindmap-workspace">
+      <header className="mindmap-toolbar">
+        <Link to="/" className="mindmap-back-button">
+          <ArrowLeft size={17} aria-hidden="true" />
+          <span>Quay lại bài học</span>
+        </Link>
 
-      <main className="main-content" role="main">
-        <div className="hero-section" style={{ padding: '2rem 3rem' }}>
-          <h1 className="chapter-title" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)' }}>
-            Mind Map — {chapterData.chapterTitle}
-          </h1>
-          <p className="chapter-subtitle">
-            Bản đồ tư duy tự động tạo từ nội dung bài học. Mỗi nút đại diện cho một phần kiến thức.
-          </p>
+        <div className="mindmap-toolbar-title">
+          <span className="mindmap-toolbar-kicker">
+            <Map size={14} aria-hidden="true" />
+            Bản đồ tư duy
+          </span>
+          <h1>Chương {chapterData.chapterNumber}</h1>
         </div>
-        <div className="mind-map-page-content">
+
+        <div className="mindmap-toolbar-meta" aria-label="Thông tin sơ đồ">
+          <span>12</span>
+          <small>Nút kiến thức</small>
+        </div>
+      </header>
+
+      <main className="mindmap-stage" role="main">
+        <section className="mindmap-intro" aria-labelledby="mindmap-title">
+          <div>
+            <p className="mindmap-eyebrow">Khám phá sơ đồ</p>
+            <h2 id="mindmap-title">{chapterData.chapterTitle}</h2>
+            <p>Bắt đầu từ trung tâm, sau đó kéo sơ đồ hoặc phóng to để theo dõi từng nhánh kiến thức.</p>
+          </div>
+          <div className="mindmap-gesture-hint" aria-label="Hướng dẫn thao tác">
+            <span><Move size={15} aria-hidden="true" /> Kéo để di chuyển</span>
+            <span><ZoomIn size={15} aria-hidden="true" /> Cuộn để phóng to</span>
+          </div>
+        </section>
+
+        <div className="mindmap-canvas" aria-label="Sơ đồ tư duy chương học">
           <MindMapView />
         </div>
+
+        <p className="mindmap-caption">Sơ đồ được tạo từ các chủ điểm trọng tâm của bài học.</p>
       </main>
     </div>
   )
