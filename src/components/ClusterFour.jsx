@@ -408,8 +408,6 @@ export default function ClusterFour() {
       <KeywordsSection />
       <div className="section-divider" />
       <QuizSection />
-      <div className="section-divider" />
-      <PresentationSection />
     </>
   )
 }

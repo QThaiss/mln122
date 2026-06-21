@@ -71,4 +71,6 @@ test('Vercel chat endpoint returns the Gemini reply for a valid request', async 
     outboundRequest.url,
     'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=test-key'
   )
+  const payload = JSON.parse(outboundRequest.options.body)
+  assert.match(payload.systemInstruction.parts[0].text, /không dùng Markdown/i)
 })

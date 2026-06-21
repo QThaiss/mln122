@@ -1,0 +1,16 @@
+export function toPlainText(content) {
+  return String(content ?? '')
+    .replace(/\r\n?/g, '\n')
+    .replace(/```(?:\w+)?\n?([\s\S]*?)```/g, '$1')
+    .replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/^\s{0,3}#{1,6}\s+/gm, '')
+    .replace(/^>\s?/gm, '')
+    .replace(/^[ \t]*[-+*][ \t]+/gm, '• ')
+    .replace(/(\*\*|__)([\s\S]*?)\1/g, '$2')
+    .replace(/~~([\s\S]*?)~~/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/(^|[\s(])[*_]([^*_]+)[*_](?=[\s).,;:!?]|$)/gm, '$1$2')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
+}

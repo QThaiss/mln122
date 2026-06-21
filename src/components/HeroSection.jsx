@@ -69,10 +69,6 @@ export default function HeroSection({ onStart }) {
             <span className="hero-stat-value">8</span>
             <span className="hero-stat-label">Câu hỏi quiz</span>
           </div>
-          <div className="hero-stat">
-            <span className="hero-stat-value">8</span>
-            <span className="hero-stat-label">Phần thuyết trình</span>
-          </div>
         </motion.div>
 
         <motion.div

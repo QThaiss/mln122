@@ -1,5 +1,6 @@
 import { useState, useCallback, useRef } from 'react'
 import { retrieveChunks, buildContext, buildSystemPrompt } from '../../services/ragService'
+import { toPlainText } from '../../services/plainText'
 import AIChatDrawer from './AIChatDrawer'
 import FloatingChatButton from './FloatingChatButton'
 
@@ -61,7 +62,7 @@ export default function AIChatProvider({ children }) {
       }\n\nBạn có muốn tìm hiểu thêm khía cạnh nào không?`
       : 'Xin lỗi, tôi không tìm thấy nội dung liên quan trong bài học. Bạn có thể hỏi cụ thể hơn về các khái niệm trong Chương 3.1 nhé!'
 
-    const assistantMsg = { role: 'assistant', content, isFallback: true }
+    const assistantMsg = { role: 'assistant', content: toPlainText(content), isFallback: true }
     setMessages(prev => [...prev, assistantMsg])
     setIsLoading(false)
     setProxyError(true)
@@ -100,7 +101,7 @@ export default function AIChatProvider({ children }) {
       const data = await response.json()
 
       if (thisRequest.current) {
-        const assistantMsg = { role: 'assistant', content: data.reply, isFallback: false }
+        const assistantMsg = { role: 'assistant', content: toPlainText(data.reply), isFallback: false }
         setMessages(prev => [...prev, assistantMsg])
         setIsLoading(false)
       }

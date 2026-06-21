@@ -59,7 +59,6 @@ const NAV_CLUSTERS = [
       { id: 'summary', label: 'Tổng kết' },
       { id: 'keywords', label: 'Từ khóa' },
       { id: 'quiz', label: 'Quiz' },
-      { id: 'presentation', label: 'Thuyết trình' },
     ],
   },
 ]
@@ -229,12 +228,7 @@ function App() {
       <AIChatProvider>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/mindmap" element={
-            <>
-              <MindMapPage />
-              <FloatingNav />
-            </>
-          } />
+          <Route path="/mindmap" element={<MindMapPage />} />
           <Route path="/flashcards" element={
             <>
               <FlashcardPage />

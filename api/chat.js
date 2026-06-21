@@ -8,6 +8,10 @@ function buildUserMessage(message, context) {
   return `CÂU HỎI:\n${message}`
 }
 
+function buildSystemInstruction(systemPrompt) {
+  return `${systemPrompt}\n\nQUY CÁCH TRẢ LỜI: Viết bằng văn bản thường, tự nhiên và dễ đọc. Không dùng Markdown: không dùng dấu **, *, #, dấu gạch đầu dòng Markdown, hoặc khối mã. Dùng các đoạn văn ngắn; khi cần liệt kê, hãy dùng câu văn hoặc ký hiệu chấm tròn.`
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST')
@@ -35,7 +39,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        systemInstruction: { parts: [{ text: systemPrompt }] },
+        systemInstruction: { parts: [{ text: buildSystemInstruction(systemPrompt) }] },
         contents: [{ parts: [{ text: buildUserMessage(message, context) }] }],
         generationConfig: { temperature: 0.7, maxOutputTokens: 800 },
       }),
