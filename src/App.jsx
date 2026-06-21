@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowUp, Moon, Sun, BookOpen, BarChart2, List } from 'lucide-react'
+import { ArrowUp, Moon, Sun, BookOpen, BarChart2, List, Brain, Layers, HelpCircle } from 'lucide-react'
 import { useScrollReveal } from './hooks/useScrollReveal'
 import LoadingScreen from './components/LoadingScreen'
 import Navbar from './components/Navbar'
@@ -11,6 +12,11 @@ import ClusterTwo from './components/ClusterTwo'
 import ClusterThree from './components/ClusterThree'
 import ClusterFour from './components/ClusterFour'
 import Footer from './components/Footer'
+import AIChatProvider from './components/AIChat/AIChatProvider'
+import MindMapPage from './components/MindMap/MindMapPage'
+import FlashcardPage from './components/Flashcards/FlashcardPage'
+import QuizPage from './components/Quiz/QuizPage'
+import { chapterData } from './services/ragService'
 
 const NAV_CLUSTERS = [
   {
@@ -58,7 +64,48 @@ const NAV_CLUSTERS = [
   },
 ]
 
-function App() {
+function TopNav({ theme, onThemeToggle, clusters, activeSection, onNavigate }) {
+  return (
+    <Navbar
+      theme={theme}
+      onThemeToggle={onThemeToggle}
+      clusters={clusters}
+      activeSection={activeSection}
+      onNavigate={onNavigate}
+    />
+  )
+}
+
+function PageNav({ clusters, activeSection, onNavigate }) {
+  return (
+    <aside className="sidebar-nav" role="navigation" aria-label="Điều hướng bài học">
+      <nav>
+        {clusters.map((cluster) => (
+          <div key={cluster.id} className="nav-cluster">
+            <div className="nav-cluster-label">
+              <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                {cluster.icon}
+                {cluster.label}
+              </span>
+            </div>
+            {cluster.items.map((item) => (
+              <button
+                key={item.id}
+                className={`nav-item ${activeSection === item.id ? 'active' : ''}`}
+                onClick={() => onNavigate(item.id)}
+              >
+                <span className="nav-item-dot" />
+                {item.label}
+              </button>
+            ))}
+          </div>
+        ))}
+      </nav>
+    </aside>
+  )
+}
+
+function HomePage() {
   const [theme, setTheme] = useState('light')
   const [showBackToTop, setShowBackToTop] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -83,7 +130,6 @@ function App() {
       const scrollTop = window.scrollY
       const docHeight = document.documentElement.scrollHeight - window.innerHeight
       const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
-
       setScrollProgress(progress)
       setShowBackToTop(scrollTop > 400)
 
@@ -120,7 +166,7 @@ function App() {
         style={{ width: `${scrollProgress}%` }}
       />
 
-      <Navbar
+      <TopNav
         theme={theme}
         onThemeToggle={handleThemeToggle}
         clusters={NAV_CLUSTERS}
@@ -141,46 +187,95 @@ function App() {
       </motion.button>
 
       <div className="page-wrapper">
-        <aside className="sidebar-nav" role="navigation" aria-label="Điều hướng bài học">
-          <nav>
-            {NAV_CLUSTERS.map((cluster) => (
-              <div key={cluster.id} className="nav-cluster">
-                <div className="nav-cluster-label">
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                    {cluster.icon}
-                    {cluster.label}
-                  </span>
-                </div>
-                {cluster.items.map((item) => (
-                  <button
-                    key={item.id}
-                    className={`nav-item ${activeSection === item.id ? 'active' : ''}`}
-                    onClick={() => scrollToSection(item.id)}
-                  >
-                    <span className="nav-item-dot" />
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-            ))}
-          </nav>
-        </aside>
+        <PageNav
+          clusters={NAV_CLUSTERS}
+          activeSection={activeSection}
+          onNavigate={scrollToSection}
+        />
 
         <main className="main-content" role="main">
+          {/* Extra nav links for new pages */}
+          <div className="extra-nav-bar">
+            <Link to="/mindmap" className="extra-nav-link">
+              <Brain size={14} />
+              Mind Map
+            </Link>
+            <Link to="/flashcards" className="extra-nav-link">
+              <Layers size={14} />
+              Flashcards
+            </Link>
+            <Link to="/quiz" className="extra-nav-link">
+              <HelpCircle size={14} />
+              Quiz
+            </Link>
+          </div>
+
           <HeroSection onStart={() => scrollToSection('objectives')} />
-
           <ObjectivesSection />
-
           <ClusterOne />
           <ClusterTwo />
           <ClusterThree />
           <ClusterFour />
-
           <Footer />
         </main>
       </div>
     </>
   )
 }
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AIChatProvider>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/mindmap" element={
+            <>
+              <MindMapPage />
+              <FloatingNav />
+            </>
+          } />
+          <Route path="/flashcards" element={
+            <>
+              <FlashcardPage />
+              <FloatingNav />
+            </>
+          } />
+          <Route path="/quiz" element={
+            <>
+              <QuizPage />
+              <FloatingNav />
+            </>
+          } />
+        </Routes>
+      </AIChatProvider>
+    </BrowserRouter>
+  )
+}
+
+function FloatingNav() {
+  return (
+    <div className="floating-nav-links">
+      <Link to="/" className="floating-nav-btn">
+        <BookOpen size={15} />
+        Bài học
+      </Link>
+      <Link to="/mindmap" className="floating-nav-btn">
+        <Brain size={15} />
+        Mind Map
+      </Link>
+      <Link to="/flashcards" className="floating-nav-btn">
+        <Layers size={15} />
+        Flashcards
+      </Link>
+      <Link to="/quiz" className="floating-nav-btn">
+        <HelpCircle size={15} />
+        Quiz
+      </Link>
+    </div>
+  )
+}
+
+import FloatingChatButton from './components/AIChat/FloatingChatButton'
 
 export default App

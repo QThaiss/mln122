@@ -1,0 +1,405 @@
+{
+  "chapterId": "chapter-3-1",
+  "chapterNumber": "3.1",
+  "chapterTitle": "Lý luận của C. Mác về giá trị thặng dư",
+  "courseName": "Kinh tế Chính trị Mác - Lênin",
+  "courseCode": "MLN122",
+  "description": "Nguồn gốc, bản chất và phương pháp sản xuất giá trị thặng dư trong nền kinh tế thị trường tư bản chủ nghĩa.",
+  "stats": {
+    "goals": 8,
+    "formulas": 5,
+    "quizQuestions": 8,
+    "presentationSections": 8
+  },
+  "goals": [
+    "Hiểu được công thức chung của tư bản.",
+    "Giải thích vì sao tiền có thể chuyển hóa thành tư bản.",
+    "Trình bày được vai trò đặc biệt của hàng hóa sức lao động.",
+    "Phân tích được quá trình sản xuất giá trị thặng dư.",
+    "Phân biệt tư bản bất biến và tư bản khả biến.",
+    "Hiểu được bản chất của tiền công trong chủ nghĩa tư bản.",
+    "Tính và giải thích được tỷ suất, khối lượng giá trị thặng dư.",
+    "Phân biệt giá trị thặng dư tuyệt đối, tương đối và siêu ngạch."
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "cluster": "Tổng quan",
+      "clusterNumber": 1,
+      "title": "Dẫn nhập Chương 3",
+      "subtitle": "Vì sao cần nghiên cứu giá trị thặng dư?",
+      "type": "intro",
+      "content": "Sau khi nghiên cứu lý luận giá trị, Chương 3 tiếp tục làm rõ lý luận giá trị thặng dư — nội dung cốt lõi trong kinh tế chính trị của C. Mác. Giá trị thặng dư là nội dung cốt lõi, giải thích nguồn gốc của sự gia tăng tư bản trong nền kinh tế thị trường tư bản chủ nghĩa. Giúp người học hiểu quan hệ lợi ích cơ bản giữa người lao động làm thuê và người sở hữu tư liệu sản xuất.",
+      "keyPoints": [
+        "Vị trí trong Chương 3: nội dung cốt lõi của kinh tế chính trị C. Mác",
+        "Ý nghĩa: hiểu quan hệ lợi ích cơ bản giữa người lao động và người sở hữu tư liệu SX"
+      ]
+    },
+    {
+      "id": "formula",
+      "cluster": "Cơ chế tạo GTD",
+      "clusterNumber": 2,
+      "title": "Công thức chung của tư bản",
+      "subtitle": "Điểm xuất phát để tìm hiểu nguồn gốc giá trị thặng dư.",
+      "type": "formula",
+      "content": "Để tìm hiểu nguồn gốc của giá trị thặng dư, trước hết cần phân biệt hai dạng vận động của tiền: lưu thông hàng hóa giản đơn H—T—H và lưu thông của tư bản T—H—T'. Khi tiền được dùng để thu giá trị thặng dư, tiền chuyển hóa thành tư bản. Tư bản là giá trị đem lại giá trị thặng dư.",
+      "formulas": [
+        {
+          "main": "T' = T + ΔT",
+          "vars": [
+            { "sym": "T", "desc": "— số tiền ứng ra ban đầu" },
+            { "sym": "T'", "desc": "— số tiền thu về (lớn hơn T)" },
+            { "sym": "ΔT", "desc": "— phần giá trị tăng thêm = giá trị thặng dư" }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "label": "Lưu thông hàng hóa giản đơn",
+          "formula": "H — T — H",
+          "description": "Hàng hóa → Tiền → Hàng hóa khác. Mục đích: giá trị sử dụng — thỏa mãn nhu cầu tiêu dùng.",
+          "example": "Bán lúa lấy tiền, rồi dùng tiền mua quần áo."
+        },
+        {
+          "label": "Lưu thông của tư bản",
+          "formula": "T — H — T'",
+          "description": "Tiền → Hàng hóa → Tiền nhiều hơn. Mục đích: giá trị thặng dư.",
+          "highlight": true
+        }
+      ],
+      "conclusion": "Khi tiền được dùng để thu giá trị thặng dư, tiền chuyển hóa thành tư bản. Tư bản là giá trị đem lại giá trị thặng dư."
+    },
+    {
+      "id": "contradiction",
+      "cluster": "Cơ chế tạo GTD",
+      "clusterNumber": 2,
+      "title": "Mâu thuẫn của công thức chung",
+      "subtitle": "Giá trị thặng dư từ đâu mà có?",
+      "type": "contradiction",
+      "content": "Vấn đề cốt lõi: nếu mua bán ngang giá, người mua và người bán chỉ trao đổi vật ngang giá — không thể tạo ra giá trị mới. Nếu mua rẻ bán đắt, người này lợi nhưng người kia thiệt; tổng giá trị xã hội không tăng.",
+      "chain": [
+        "Lưu thông thông thường không tạo ra giá trị thặng dư.",
+        "Ngoài lưu thông, tiền cũng không thể tự tăng lên.",
+        "Bí mật phải nằm ở một loại hàng hóa đặc biệt.",
+        "Loại hàng hóa đó khi sử dụng có thể tạo ra giá trị mới lớn hơn giá trị của chính nó.",
+        "Hàng hóa đặc biệt đó là sức lao động."
+      ],
+      "conclusion": "Mâu thuẫn được giải quyết bằng việc phát hiện hàng hóa sức lao động."
+    },
+    {
+      "id": "labor",
+      "cluster": "Cơ chế tạo GTD",
+      "clusterNumber": 2,
+      "title": "Hàng hóa sức lao động",
+      "subtitle": "Chìa khóa giải thích nguồn gốc giá trị thặng dư",
+      "type": "labor",
+      "content": "Sức lao động là toàn bộ năng lực thể chất và tinh thần tồn tại trong con người, được sử dụng trong quá trình lao động sản xuất. Trong CNTB, sức lao động trở thành một hàng hóa đặc biệt.",
+      "conditions": [
+        {
+          "label": "Điều kiện 1",
+          "text": "Người lao động phải được tự do về thân thể, có quyền bán sức lao động của mình."
+        },
+        {
+          "label": "Điều kiện 2",
+          "text": "Người lao động không có tư liệu sản xuất, buộc phải bán sức lao động để sinh sống."
+        }
+      ],
+      "attributes": [
+        {
+          "label": "Giá trị hàng hóa sức lao động",
+          "description": "Do lượng lao động xã hội cần thiết để sản xuất và tái sản xuất sức lao động quyết định. Được đo gián tiếp qua giá trị tư liệu sinh hoạt cần thiết.",
+          "components": [
+            "Giá trị tư liệu sinh hoạt cần thiết cho người lao động.",
+            "Chi phí đào tạo người lao động.",
+            "Giá trị tư liệu sinh hoạt nuôi con người lao động."
+          ]
+        },
+        {
+          "label": "Giá trị sử dụng",
+          "description": "Thể hiện trong quá trình lao động. Điểm đặc biệt: khi được sử dụng, sức lao động không chỉ bảo tồn giá trị của bản thân mà còn tạo ra giá trị mới lớn hơn giá trị của chính nó.",
+          "highlight": "Sức lao động là hàng hóa đặc biệt vì có khả năng tạo ra giá trị thặng dư."
+        }
+      ]
+    },
+    {
+      "id": "production",
+      "cluster": "Cơ chế tạo GTD",
+      "clusterNumber": 2,
+      "title": "Quá trình sản xuất giá trị thặng dư",
+      "subtitle": "Sự thống nhất giữa tạo giá trị và làm tăng giá trị.",
+      "type": "production",
+      "content": "Quá trình sản xuất GTD là sự thống nhất giữa quá trình tạo giá trị và quá trình làm tăng giá trị. Nhà tư bản ứng tiền mua tư liệu sản xuất và sức lao động. Công nhân sử dụng sức lao động để sản xuất hàng hóa mới.",
+      "steps": [
+        "Nhà tư bản ứng tiền mua tư liệu sản xuất và sức lao động.",
+        "Công nhân dùng lao động cụ thể biến tư liệu sản xuất thành sản phẩm mới.",
+        "Giá trị tư liệu sản xuất được chuyển vào giá trị sản phẩm.",
+        "Công nhân dùng lao động trừu tượng tạo ra giá trị mới.",
+        "Phần giá trị mới bù đắp tiền công, phần còn lại là giá trị thặng dư."
+      ],
+      "laborTypes": [
+        {
+          "label": "Thời gian lao động tất yếu",
+          "description": "Phần thời gian tạo giá trị ngang bằng giá trị sức lao động (tương ứng tiền công)."
+        },
+        {
+          "label": "Thời gian lao động thặng dư",
+          "description": "Phần thời gian tạo ra giá trị thặng dư cho nhà tư bản."
+        }
+      ],
+      "essence": "Phần giá trị mới do lao động công nhân tạo ra ngoài giá trị sức lao động, bị nhà tư bản chiếm đoạt."
+    },
+    {
+      "id": "example",
+      "cluster": "Cơ chế tạo GTD",
+      "clusterNumber": 2,
+      "title": "Ví dụ minh họa",
+      "subtitle": "Quá trình sản xuất giá trị thặng dư trong thực tế",
+      "type": "example",
+      "content": "Giả sử nhà tư bản sản xuất sợi. Ngày lao động 8 giờ, nhà tư bản ứng:",
+      "investments": [
+        { "label": "Mua bông", "value": "50 USD" },
+        { "label": "Hao mòn máy móc", "value": "3 USD" },
+        { "label": "Mua sức lao động (1 ngày)", "value": "15 USD" },
+        { "label": "Tổng tư bản ứng trước", "value": "68 USD", "isTotal": true }
+      ],
+      "breakdown": [
+        {
+          "period": "4 giờ đầu — Lao động tất yếu",
+          "description": "Công nhân tạo 15 USD giá trị mới = giá trị sức lao động.",
+          "formula": "50 + 3 + 15 = 68 USD"
+        },
+        {
+          "period": "4 giờ sau — Lao động thặng dư",
+          "description": "Công nhân tạo thêm 15 USD giá trị mới → giá trị thặng dư.",
+          "formula": "68 + 15 = 83 USD",
+          "highlight": true
+        }
+      ],
+      "formulas": [
+        {
+          "main": "G = c + v + m",
+          "vars": [
+            { "sym": "c", "desc": "— tư bản bất biến (tư liệu sản xuất)" },
+            { "sym": "v", "desc": "— tư bản khả biến (sức lao động)" },
+            { "sym": "m", "desc": "— giá trị thặng dư (15 USD)" }
+          ]
+        }
+      ],
+      "conclusion": "Nhà tư bản ứng 68 USD, thu về 83 USD. Phần chênh lệch 15 USD chính là giá trị thặng dư."
+    },
+    {
+      "id": "capital",
+      "cluster": "Công cụ phân tích",
+      "clusterNumber": 3,
+      "title": "Tư bản bất biến và tư bản khả biến",
+      "subtitle": "C. Mác phân chia tư bản theo vai trò trong việc tạo giá trị thặng dư.",
+      "type": "capital",
+      "content": "Để làm rõ nguồn gốc của giá trị thặng dư, C. Mác chia tư bản thành hai bộ phận.",
+      "capitalTypes": [
+        {
+          "symbol": "c",
+          "label": "Tư bản bất biến",
+          "characteristics": [
+            "Mua tư liệu sản xuất: máy móc, nhà xưởng, nguyên liệu, nhiên liệu.",
+            "Giá trị được lao động cụ thể bảo tồn và chuyển vào sản phẩm mới.",
+            "Không tạo ra giá trị mới.",
+            "Không trực tiếp tạo ra GTD, nhưng là điều kiện cần thiết."
+          ]
+        },
+        {
+          "symbol": "v",
+          "label": "Tư bản khả biến",
+          "highlight": true,
+          "characteristics": [
+            "Dùng để mua hàng hóa sức lao động.",
+            "Trong quá trình SX, lao động của công nhân tạo giá trị mới lớn hơn giá trị ban đầu.",
+            "Biến đổi về lượng trong quá trình sản xuất.",
+            "Đây là nguồn gốc trực tiếp tạo ra giá trị thặng dư."
+          ]
+        }
+      ],
+      "formulas": [
+        {
+          "main": "G = c + (v + m)",
+          "vars": [
+            { "sym": "c", "desc": "— giá trị tư liệu sản xuất (lao động quá khứ)" },
+            { "sym": "v", "desc": "— giá trị sức lao động (tư bản khả biến)" },
+            { "sym": "m", "desc": "— giá trị thặng dư" },
+            { "sym": "v + m", "desc": "— giá trị mới do lao động sống công nhân tạo ra" }
+          ]
+        }
+      ],
+      "conclusion": "Tư bản bất biến không tạo ra GTD. Tư bản khả biến là nguồn gốc trực tiếp tạo ra GTD."
+    },
+    {
+      "id": "salary",
+      "cluster": "Công cụ phân tích",
+      "clusterNumber": 3,
+      "title": "Tiền công trong chủ nghĩa tư bản",
+      "subtitle": "Hình thức biểu hiện của giá trị hàng hóa sức lao động.",
+      "type": "salary",
+      "content": "Tiền công là giá cả của hàng hóa sức lao động. Bề ngoài, có vẻ như nhà tư bản trả công cho toàn bộ lao động của công nhân. Nhưng thực chất, tiền công chỉ tương ứng với giá trị sức lao động.",
+      "chain": [
+        "Công nhân làm việc một khoảng thời gian và nhận tiền công.",
+        "Điều này dễ làm hiểu nhà tư bản trả công cho toàn bộ lao động.",
+        "Nhưng thực chất, tiền công chỉ tương ứng với giá trị sức lao động.",
+        "Trong ngày lao động, công nhân tạo giá trị lớn hơn tiền công.",
+        "Phần dôi ra ngoài tiền công là giá trị thặng dư."
+      ],
+      "conclusion": "Khi hiểu đúng bản chất tiền công, người lao động nhận thức rõ hơn vị trí của mình trong quan hệ lợi ích với người sử dụng lao động."
+    },
+    {
+      "id": "rate-mass",
+      "cluster": "Công cụ phân tích",
+      "clusterNumber": 3,
+      "title": "Tỷ suất và Khối lượng giá trị thặng dư",
+      "subtitle": "Hai chỉ tiêu quan trọng để đánh giá quá trình sản xuất GTD.",
+      "type": "rate-mass",
+      "metrics": [
+        {
+          "label": "Tỷ suất GTD",
+          "description": "Phản ánh trình độ khai thác sức lao động làm thuê.",
+          "formulas": [
+            { "main": "m' = m / v × 100%", "vars": [
+              { "sym": "m'", "desc": "— tỷ suất GTD (%)" },
+              { "sym": "m", "desc": "— giá trị thặng dư" },
+              { "sym": "v", "desc": "— tư bản khả biến" }
+            ]},
+            { "main": "m' = t' / t × 100%", "vars": [
+              { "sym": "t'", "desc": "— thời gian lao động thặng dư" },
+              { "sym": "t", "desc": "— thời gian lao động tất yếu" }
+            ]}
+          ],
+          "example": "4h tất yếu + 4h thặng dư → m' = 100%. Một nửa ngày lao động bù đắp tiền công, nửa còn lại tạo GTD."
+        },
+        {
+          "label": "Khối lượng GTD",
+          "description": "Phản ánh quy mô GTD nhà tư bản thu được.",
+          "formulas": [
+            { "main": "M = m' × V", "vars": [
+              { "sym": "M", "desc": "— khối lượng GTD" },
+              { "sym": "m'", "desc": "— tỷ suất GTD (%)" },
+              { "sym": "V", "desc": "— tổng tư bản khả biến" }
+            ]}
+          ],
+          "conclusion": "Tỷ suất GTD phản ánh mức độ khai thác; Khối lượng GTD phản ánh quy mô."
+        }
+      ]
+    },
+    {
+      "id": "methods",
+      "cluster": "Công cụ phân tích",
+      "clusterNumber": 3,
+      "title": "Các phương pháp sản xuất GTD",
+      "subtitle": "Hai phương pháp cơ bản để thu nhiều GTD hơn.",
+      "type": "methods",
+      "content": "Để thu được nhiều giá trị thặng dư hơn, nhà tư bản sử dụng hai phương pháp:",
+      "methods": [
+        {
+          "id": "absolute",
+          "label": "GTD tuyệt đối",
+          "description": "Thu được bằng cách kéo dài ngày lao động, trong khi năng suất, giá trị SLĐ và thời gian lao động tất yếu không đổi.",
+          "example": "Ngày 8h: 4h tất yếu + 4h thặng dư → m' = 100%. Kéo dài 10h: 4h tất yếu + 6h thặng dư → m' = 150%.",
+          "limitation": "Ngày lao động bị giới hạn bởi thể chất, tinh thần và sự đấu tranh của người lao động."
+        },
+        {
+          "id": "relative",
+          "label": "GTD tương đối",
+          "description": "Thu được bằng cách rút ngắn thời gian lao động tất yếu, kéo dài thời gian lao động thặng dư, trong điều kiện ngày lao động không đổi.",
+          "example": "Ngày 8h: 4h tất yếu + 4h thặng dư → m' = 100%. Tăng năng suất → 2h tất yếu + 6h thặng dư → m' = 300%.",
+          "condition": "Cần tăng năng suất lao động xã hội, đặc biệt trong các ngành sản xuất tư liệu sinh hoạt cần thiết."
+        }
+      ],
+      "extraMethod": {
+        "id": "surplus",
+        "label": "GTD siêu ngạch",
+        "description": "Khi một doanh nghiệp cải tiến kỹ thuật trước, hàng hóa có giá trị cá biệt thấp hơn giá trị xã hội. Phần chênh lệch GTD cao hơn gọi là GTD siêu ngạch.",
+        "aspects": [
+          { "label": "Nguồn gốc", "text": "Tăng năng suất lao động cá biệt" },
+          { "label": "Điều kiện", "text": "GT cá biệt < GT xã hội" },
+          { "label": "Kết quả", "text": "Thu GTD cao hơn" },
+          { "label": "Ý nghĩa", "text": "Thúc đẩy đổi mới kỹ thuật" }
+        ],
+        "conclusion": "GTD siêu ngạch là động lực thúc đẩy nhà tư bản cải tiến kỹ thuật, hợp lý hóa sản xuất, nâng cao năng suất lao động."
+      }
+    }
+  ],
+  "summary": {
+    "id": "summary",
+    "cluster": "Ôn tập",
+    "clusterNumber": 4,
+    "title": "Sơ đồ tổng kết kiến thức",
+    "subtitle": "Toàn bộ nội dung Chương 3.1 trong một bức tranh.",
+    "flow": ["Tiền", "Mua TLSX + Sức lao động", "Sản xuất hàng hóa", "Tạo giá trị mới", "Bù đắp tiền công", "GT Thặng dư", "Tư bản tăng"],
+    "formulas": [
+      { "sym": "T — H — T'", "desc": "Công thức chung của tư bản" },
+      { "sym": "T' = T + ΔT", "desc": "Tiền chuyển hóa thành tư bản" },
+      { "sym": "G = c + v + m", "desc": "Giá trị hàng hóa" },
+      { "sym": "m' = m/v×100%", "desc": "Tỷ suất GTD" },
+      { "sym": "M = m' × V", "desc": "Khối lượng GTD" }
+    ],
+    "text": "Lý luận GTD của C. Mác làm rõ nguồn gốc và bản chất của sự tăng lên của tư bản. GTD không sinh ra từ lưu thông thông thường mà từ quá trình sản xuất, qua việc sử dụng hàng hóa sức lao động. Tư bản bất biến chỉ chuyển giá trị cũ vào sản phẩm; tư bản khả biến là nguồn gốc trực tiếp tạo GTD."
+  },
+  "essence": {
+    "id": "essence",
+    "cluster": "Ôn tập",
+    "clusterNumber": 4,
+    "title": "Bản chất kinh tế - xã hội của GTD",
+    "subtitle": "Quan hệ giữa lao động làm thuê và người mua sức lao động.",
+    "definition": "Giá trị thặng dư là phần giá trị mới dôi ra ngoài giá trị hàng hóa sức lao động. Bản chất kinh tế - xã hội là quan hệ giữa lao động làm thuê và người mua sức lao động.",
+    "points": [
+      "Người lao động bán sức lao động để nhận tiền công.",
+      "Nhà tư bản mua sức lao động và sử dụng trong quá trình sản xuất.",
+      "Công nhân tạo ra giá trị mới lớn hơn giá trị sức lao động.",
+      "Phần giá trị dôi ra ngoài tiền công trở thành GTD.",
+      "GTD thuộc về nhà tư bản vì sản phẩm thuộc sở hữu nhà tư bản."
+    ],
+    "conclusion": "Lý luận GTD cho thấy nguồn gốc tăng tư bản không nằm ở lưu thông mà trong quá trình sản xuất, qua việc sử dụng hàng hóa sức lao động."
+  },
+  "keywords": [
+    "Giá trị thặng dư", "Tư bản", "Công thức chung",
+    "H — T — H", "T — H — T'", "Hàng hóa sức lao động",
+    "Thời gian lao động tất yếu", "Thời gian lao động thặng dư",
+    "Tư bản bất biến", "Tư bản khả biến", "Tiền công",
+    "Tỷ suất GTD", "Khối lượng GTD",
+    "GTD tuyệt đối", "GTD tương đối", "GTD siêu ngạch"
+  ],
+  "quiz": [
+    { "id": 1, "question": "Công thức chung của tư bản là gì?", "options": [{ "id": "A", "text": "H - T - H" }, { "id": "B", "text": "T - H - T'" }, { "id": "C", "text": "H - H - T" }, { "id": "D", "text": "T - T - H" }], "correct": "B", "explanation": "Công thức chung của tư bản là T - H - T', trong đó T' lớn hơn T, phần chênh lệch là giá trị thặng dư." },
+    { "id": 2, "question": "Trong công thức T - H - T', T' có nghĩa là gì?", "options": [{ "id": "A", "text": "Số tiền ban đầu" }, { "id": "B", "text": "Số tiền mất đi" }, { "id": "C", "text": "Số tiền thu về lớn hơn số tiền ứng ra ban đầu" }, { "id": "D", "text": "Giá trị sử dụng của hàng hóa" }], "correct": "C", "explanation": "T' là số tiền thu về lớn hơn T ban đầu. Phần chênh lệch ΔT chính là giá trị thặng dư." },
+    { "id": 3, "question": "Hàng hóa nào là chìa khóa giải thích nguồn gốc GTD?", "options": [{ "id": "A", "text": "Máy móc" }, { "id": "B", "text": "Nguyên liệu" }, { "id": "C", "text": "Sức lao động" }, { "id": "D", "text": "Tiền tệ" }], "correct": "C", "explanation": "Sức lao động là hàng hóa đặc biệt, tạo ra giá trị mới lớn hơn giá trị của chính nó — nguồn gốc GTD." },
+    { "id": 4, "question": "Tư bản bất biến được ký hiệu là gì?", "options": [{ "id": "A", "text": "c" }, { "id": "B", "text": "v" }, { "id": "C", "text": "m" }, { "id": "D", "text": "M" }], "correct": "A", "explanation": "c là ký hiệu tư bản bất biến (constante). v là tư bản khả biến, m là GTD, M là khối lượng GTD." },
+    { "id": 5, "question": "Tư bản khả biến dùng để mua yếu tố nào?", "options": [{ "id": "A", "text": "Máy móc" }, { "id": "B", "text": "Nguyên liệu" }, { "id": "C", "text": "Sức lao động" }, { "id": "D", "text": "Nhà xưởng" }], "correct": "C", "explanation": "Tư bản khả biến (v) mua hàng hóa sức lao động. Đây là nguồn gốc trực tiếp tạo GTD." },
+    { "id": 6, "question": "Công thức tính tỷ suất GTD là gì?", "options": [{ "id": "A", "text": "m' = m / v × 100%" }, { "id": "B", "text": "M = c + v" }, { "id": "C", "text": "G = T + H" }, { "id": "D", "text": "T = H + m" }], "correct": "A", "explanation": "m' = m / v × 100% là công thức tính tỷ suất GTD, phản ánh trình độ khai thác sức lao động." },
+    { "id": 7, "question": "GTD tuyệt đối thu được chủ yếu bằng cách nào?", "options": [{ "id": "A", "text": "Rút ngắn thời gian lao động tất yếu" }, { "id": "B", "text": "Kéo dài ngày lao động hoặc tăng cường độ" }, { "id": "C", "text": "Giảm giá trị hàng hóa" }, { "id": "D", "text": "Tăng số lượng công nhân" }], "correct": "B", "explanation": "GTD tuyệt đối thu được bằng cách kéo dài ngày lao động, trong khi các yếu tố khác không đổi." },
+    { "id": 8, "question": "GTD tương đối thu được chủ yếu bằng cách nào?", "options": [{ "id": "A", "text": "Tăng năng suất lao động xã hội để rút ngắn thời gian lao động tất yếu" }, { "id": "B", "text": "Tăng thời gian nghỉ ngơi" }, { "id": "C", "text": "Giảm số công nhân" }, { "id": "D", "text": "Giảm sản lượng" }], "correct": "A", "explanation": "GTD tương đối thu được bằng tăng năng suất lao động xã hội, rút ngắn thời gian lao động tất yếu." }
+  ],
+  "presentation": [
+    { "title": "Mở đầu", "content": "Kính chào thầy cô và các bạn. Hôm nay, em xin trình bày nội dung Chương 3.1: Lý luận của C. Mác về giá trị thặng dư. Đây là phần kiến thức quan trọng trong môn Kinh tế chính trị Mác - Lênin, giúp hiểu nguồn gốc của tư bản và bản chất của giá trị thặng dư." },
+    { "title": "Công thức chung của tư bản", "content": "Cần phân biệt H - T - H (lưu thông hàng hóa giản đơn, mục đích giá trị sử dụng) với T - H - T' (lưu thông của tư bản, mục đích thu GTD). Khi tiền dùng để tạo GTD, tiền chuyển hóa thành tư bản." },
+    { "title": "Hàng hóa sức lao động", "content": "GTD không sinh ra từ mua bán thông thường mà từ hàng hóa đặc biệt: hàng hóa sức lao động. Sức lao động trở thành hàng hóa khi người lao động tự do về thân thể nhưng không có tư liệu sản xuất. Điểm đặc biệt: sức lao động tạo giá trị mới lớn hơn giá trị của chính nó." },
+    { "title": "Quá trình sản xuất GTD", "content": "Nhà tư bản ứng tiền mua tư liệu sản xuất và sức lao động. Công nhân lao động để tạo sản phẩm. Thời gian lao động tất yếu bù đắp tiền công; thời gian lao động thặng dư tạo GTD cho nhà tư bản." },
+    { "title": "Tư bản bất biến và khả biến", "content": "C. Mác chia tư bản: tư bản bất biến (c) mua tư liệu sản xuất, chỉ chuyển giá trị cũ; tư bản khả biến (v) mua sức lao động, là nguồn gốc trực tiếp tạo GTD." },
+    { "title": "Tỷ suất và khối lượng GTD", "content": "Tỷ suất GTD: m' = m/v × 100%, phản ánh mức độ khai thác. Khối lượng GTD: M = m' × V, phản ánh quy mô GTD thu được." },
+    { "title": "Các phương pháp sản xuất GTD", "content": "GTD tuyệt đối: kéo dài ngày lao động. GTD tương đối: tăng năng suất lao động xã hội rút ngắn thời gian lao động tất yếu. GTD siêu ngạch: doanh nghiệp cải tiến kỹ thuật trước thu GTD cao hơn." },
+    { "title": "Kết luận", "content": "Lý luận GTD của C. Mác làm rõ nguồn gốc và bản chất sự tăng tư bản. GTD không tự sinh trong lưu thông mà trong quá trình sản xuất, qua việc sử dụng hàng hóa sức lao động. Xin cảm ơn thầy cô và các bạn đã lắng nghe." }
+  ],
+  "navigation": [
+    { "id": "objectives", "label": "Mục tiêu" },
+    { "id": "intro", "label": "Dẫn nhập" },
+    { "id": "formula", "label": "Công thức T-H-T'" },
+    { "id": "contradiction", "label": "Mâu thuẫn" },
+    { "id": "labor", "label": "Hàng hóa SLĐ" },
+    { "id": "production", "label": "Quá trình SX" },
+    { "id": "example", "label": "Ví dụ" },
+    { "id": "capital", "label": "Tư bản c/v" },
+    { "id": "salary", "label": "Tiền công" },
+    { "id": "rate-mass", "label": "Tỷ suất & KL" },
+    { "id": "methods", "label": "Phương pháp" },
+    { "id": "summary", "label": "Tổng kết" },
+    { "id": "essence", "label": "Bản chất" },
+    { "id": "keywords", "label": "Từ khóa" },
+    { "id": "quiz", "label": "Quiz" },
+    { "id": "presentation", "label": "Thuyết trình" }
+  ]
+}
