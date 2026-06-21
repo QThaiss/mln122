@@ -99,6 +99,26 @@ function PageNav({ clusters, activeSection, onNavigate }) {
             ))}
           </div>
         ))}
+        <div className="nav-cluster">
+          <div className="nav-cluster-label">
+            <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+              <Layers size={14} />
+              Công cụ học
+            </span>
+          </div>
+          <Link to="/mindmap" className="nav-item">
+            <Brain size={14} />
+            Mind Map
+          </Link>
+          <Link to="/flashcards" className="nav-item">
+            <Layers size={14} />
+            Flashcards
+          </Link>
+          <Link to="/quiz" className="nav-item">
+            <HelpCircle size={14} />
+            Quiz
+          </Link>
+        </div>
       </nav>
     </aside>
   )
@@ -193,22 +213,6 @@ function HomePage() {
         />
 
         <main className="main-content" role="main">
-          {/* Extra nav links for new pages */}
-          <div className="extra-nav-bar">
-            <Link to="/mindmap" className="extra-nav-link">
-              <Brain size={14} />
-              Mind Map
-            </Link>
-            <Link to="/flashcards" className="extra-nav-link">
-              <Layers size={14} />
-              Flashcards
-            </Link>
-            <Link to="/quiz" className="extra-nav-link">
-              <HelpCircle size={14} />
-              Quiz
-            </Link>
-          </div>
-
           <HeroSection onStart={() => scrollToSection('objectives')} />
           <ObjectivesSection />
           <ClusterOne />

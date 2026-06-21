@@ -15,6 +15,13 @@ test('Mind Map route does not render navigation that can cover the diagram', () 
   assert.doesNotMatch(mindMapRoute, /<FloatingNav\s*\/>/)
 })
 
+test('learning tools are available in the sidebar instead of an overlapping top bar', () => {
+  assert.doesNotMatch(app, /className="extra-nav-bar"/)
+  assert.match(app, /to="\/mindmap" className="nav-item"/)
+  assert.match(app, /to="\/flashcards" className="nav-item"/)
+  assert.match(app, /to="\/quiz" className="nav-item"/)
+})
+
 test('presentation content is not rendered in the lesson website', () => {
   assert.doesNotMatch(app, /id: 'presentation'/)
   assert.doesNotMatch(clusterFour, /<PresentationSection\s*\/>/)
