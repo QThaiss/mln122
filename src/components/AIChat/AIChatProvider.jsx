@@ -5,7 +5,11 @@ import AIChatDrawer from './AIChatDrawer'
 import FloatingChatButton from './FloatingChatButton'
 
 const FETCH_TIMEOUT_MS = 10_000
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/+$/, '')
+const RENDER_API_BASE_URL = 'https://mln122-ai-backend.onrender.com'
+const API_BASE_URL = (
+  import.meta.env.VITE_API_BASE_URL ||
+  (import.meta.env.PROD ? RENDER_API_BASE_URL : '')
+).replace(/\/+$/, '')
 
 // Wraps fetch with a timeout so the fallback always triggers eventually
 function fetchWithTimeout(url, options, timeoutMs = FETCH_TIMEOUT_MS) {
