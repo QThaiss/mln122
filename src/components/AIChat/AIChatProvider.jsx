@@ -5,6 +5,7 @@ import AIChatDrawer from './AIChatDrawer'
 import FloatingChatButton from './FloatingChatButton'
 
 const FETCH_TIMEOUT_MS = 10_000
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/+$/, '')
 
 // Wraps fetch with a timeout so the fallback always triggers eventually
 function fetchWithTimeout(url, options, timeoutMs = FETCH_TIMEOUT_MS) {
@@ -83,7 +84,7 @@ export default function AIChatProvider({ children }) {
       const context = buildContext(chunks)
       const systemPrompt = buildSystemPrompt()
 
-      const response = await fetchWithTimeout('/api/chat', {
+      const response = await fetchWithTimeout(`${API_BASE_URL}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
