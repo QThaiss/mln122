@@ -155,7 +155,7 @@ export default function AIChatDrawer({
             {proxyError && (
               <div className="ai-chat-offline-banner">
                 <span>
-                  Backend không khả dụng — đang hiển thị nội dung từ bài học.
+                  AI trực tuyến tạm thời không khả dụng — đang hiển thị nội dung từ bài học.
                   <br />
                   <a
                     href="http://localhost:3001"
@@ -163,9 +163,9 @@ export default function AIChatDrawer({
                     rel="noopener noreferrer"
                     className="ai-chat-offline-link"
                   >
-                    Khởi động backend
+                    Kiểm tra backend
                   </a>
-                  {' '}(npm run dev trong thư mục backend) để có câu trả lời đầy đủ từ AI.
+                  {' '}(npm run dev trong thư mục backend và API key) để có câu trả lời đầy đủ từ AI.
                 </span>
               </div>
             )}

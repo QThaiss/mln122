@@ -95,7 +95,8 @@ export default function AIChatProvider({ children }) {
       }, FETCH_TIMEOUT_MS)
 
       if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`)
+        if (thisRequest.current) showFallback(userMessage)
+        return
       }
 
       const data = await response.json()
